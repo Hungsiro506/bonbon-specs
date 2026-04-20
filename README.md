@@ -31,6 +31,16 @@ It is intentionally kept separate from the bonbon engineering repo so non-develo
 
 Top-level files (`backend-architecture.md`, `plan.md`, `golang-*`, …) are cross-cutting references, not feature specs.
 
+## Guides
+
+The [`guides/`](./guides/) folder contains process documentation — how a spec AC here becomes a test scenario in bonbon. Readable without any TypeScript knowledge:
+
+- **[`guides/test-first-with-ai.md`](./guides/test-first-with-ai.md)** — the cross-repo workflow end-to-end.
+- **[`guides/ac-to-scenario-derivation.md`](./guides/ac-to-scenario-derivation.md)** — the thinking guide for picking the right N test scenarios per AC.
+- **[`guides/prompts/scenario-derivation.md`](./guides/prompts/scenario-derivation.md)** — a portable AI prompt to generate scenarios from an AC.
+
+See [`guides/README.md`](./guides/README.md) for the full index and the doc-ownership rule (process here, code-level enforcement in bonbon).
+
 ## How specs are structured
 
 Every feature spec follows the same template (`specs/<nnn>-<slug>/spec.md`):
@@ -91,7 +101,7 @@ git add specs && git commit -m "chore: bump specs to $(cd specs && git rev-parse
 
 Tests in bonbon use `scenario({ spec: "<slug>", id: "<AC-ID>", given, when, then }, fn)` to link to ACs. Tooling (`pnpm scenarios:sync`, `pnpm scenarios:validate`) keeps the link honest.
 
-For the full workflow see [bonbon/docs/testing/test-first-with-ai.md](https://github.com/Hungsiro506/bonbon/blob/main/docs/testing/test-first-with-ai.md).
+For the full workflow see [`guides/test-first-with-ai.md`](./guides/test-first-with-ai.md).
 
 ## License
 
