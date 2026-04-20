@@ -140,6 +140,8 @@ The garage owner creates, edits, and organizes their catalog of products (with i
 7. **Given** an existing item, **When** the owner edits any field and saves, **Then** the changes are persisted.
 8. **Given** a product/service, **When** setting status to "Paused", **Then** the item is hidden from the car owner marketplace and bonbon GO quick-select but remains in the catalog.
 9. **Given** product images, **When** uploading, **Then** images must conform to a standardized dimension to ensure consistent display on the car owner web.
+10. **Given** the item type is "Service", **When** the owner fills in Name, Price, Description, Image, Category (no inventory field), and clicks Save to create a new service, **Then** the service is persisted and appears in the catalog — validating the Service-type create path independently from the Product-type create path.
+11. **Given** an existing item of type "Service", **When** the owner edits any field and clicks Save, **Then** the updated data is persisted correctly — validating that the Service-type save path functions independently from the Product-type save path.
 
 ---
 
